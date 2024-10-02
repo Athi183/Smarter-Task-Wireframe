@@ -4,19 +4,19 @@ import React from 'react';
 interface Task {
   title: string;
   dueDate?: string;
-  completedDate?: string;
-  assignee: string;
+  completedAtDate?: string;
+  assigneeName: string;
 }
 
 const App: React.FC = () => {
   const pendingTasks: Task[] = [
-    { title: "Build the website with static content", dueDate: "10th April", assignee: "Rohit S" },
-    { title: "Add a blog", dueDate: "22nd March", assignee: "Rohit M" },
+    { title: "Build the website with static content", dueDate: "10th April", assigneeName: "Rohit S" },
+    { title: "Add a blog", dueDate: "22nd March", assigneeName: "Rohit M" },
   ];
 
   const doneTasks: Task[] = [
-    { title: "Design the mockup", completedDate: "10th April", assignee: "Rohit M" },
-    { title: "Get the approval from principal", completedDate: "20th April", assignee: "Ajay S" },
+    { title: "Design the mockup", completedAtDate: "10th April", assigneeName: "Rohit M" },
+    { title: "Get the approval from principal", completedAtDate: "20th April", assigneeName: "Ajay S" },
   ];
 
   return (
@@ -47,7 +47,7 @@ const App: React.FC = () => {
                 key={index}
                 title={task.title}
                 dueDate={task.dueDate}
-                assignee={task.assignee}
+                assigneeName={task.assigneeName}
               />
             ))}
             <button className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
@@ -62,8 +62,8 @@ const App: React.FC = () => {
               <TaskCard
                 key={index}
                 title={task.title}
-                completedDate={task.completedDate}
-                assignee={task.assignee}
+                completedAtDate={task.completedAtDate}
+                assigneeName={task.assigneeName}
               />
             ))}
           </div>
