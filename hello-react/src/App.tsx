@@ -1,14 +1,20 @@
 import './index.css';
+import TaskCard from './TaskCard';
+import React from 'react';
+interface Task {
+  title: string;
+  dueDate?: string;
+  completedDate?: string;
+  assignee: string;
+}
 
-import TaskCard from "./TaskCard";
-
-const App = () => {
-  const pendingTasks = [
+const App: React.FC = () => {
+  const pendingTasks: Task[] = [
     { title: "Build the website with static content", dueDate: "10th April", assignee: "Rohit S" },
     { title: "Add a blog", dueDate: "22nd March", assignee: "Rohit M" },
   ];
 
-  const doneTasks = [
+  const doneTasks: Task[] = [
     { title: "Design the mockup", completedDate: "10th April", assignee: "Rohit M" },
     { title: "Get the approval from principal", completedDate: "20th April", assignee: "Ajay S" },
   ];
